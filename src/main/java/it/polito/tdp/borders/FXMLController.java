@@ -63,6 +63,13 @@ public class FXMLController {
 	@FXML
 	void doSimula(ActionEvent event) {
 
+		this.txtResult.clear();
+		Country c = this.boxNazione.getValue();
+		int T = this.model.simula(c);
+		List<CountryAndNumber> stanziali = this.model.getPersoneStanziali();
+		this.txtResult.setText(T + "\n");
+		this.txtResult.appendText(stanziali + "\n");
+
 	}
 
 	@FXML // This method is called by the FXMLLoader when initialization is complete
